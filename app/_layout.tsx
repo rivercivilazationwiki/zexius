@@ -7,9 +7,8 @@ export default function RootLayout() {
         <Stack.Screen name="index"/>
         <Stack.Screen name="SignUp" />
         <Stack.Screen name="LogIn" />
-        <Stack.Screen name="SetAppointmentP" />
         <Stack.Screen name="CheckAppD" />
-        <Stack.Screen name="SubAbbuse" />
+        <Stack.Screen name="(pTabs)" options={{ headerShown: false }} />
       </Stack>
     </AppProvider>);
 }

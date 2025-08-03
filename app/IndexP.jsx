@@ -13,12 +13,18 @@ function ButtonLink(props) {
 }
 export function BottomTab() {
   return (
-    <View style={{flex:1,flexDirection:"row"}}>
-      <ButtonLink title="Make an Appointment" href="/SetAppointmentP" />
-      <View style={{width:5}} />
-      <ButtonLink title="Substance Abuse" href="/SubAbbuse" />
-      <View style={{width:5}} />
-      <ButtonLink title="Ketamine Infusion" href="/KetInfusion" />
+    <View style={{flex:1,flexDirection:"column"}}>
+      <View style={{flex:1,flexDirection:"row"}}>
+        <ButtonLink title="Make an Appointment" href="/(pTabs)/SetAppointmentP" />
+        <View style={{width:5}} />
+        <ButtonLink title="Check Appointments" href="/(pTabs)/CheckAppP" />
+      </View>
+      <View style={{height:10}} />
+      <View style={{flex:1,flexDirection:"row"}}>
+        <ButtonLink title="Substance Abuse" href="/(pTabs)/SubAbbuse" />
+        <View style={{width:5}} />
+        <ButtonLink title="Ketamine Infusion" href="/(pTabs)/KetInfusion" />
+      </View>
     </View>
   )
 };
