@@ -1,5 +1,6 @@
 import { Link,useRouter } from "expo-router";
 import { Text, View,StyleSheet,Button } from "react-native";
+import styles from './styles';
 const styles=StyleSheet.create({
   link: {
     color:"blue",
@@ -16,8 +17,8 @@ function ButtonLink(props) {
 };
 export default function Index() {
   return (
-    <View>
-      <Text style={{fontSize:32}}>Welcome to Samaria App</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Welcome to Samaria App</Text>
       <ButtonLink title="Sign Up" href="/SignUp" />
       <ButtonLink title="Log In" href="/LogIn" />
     </View>

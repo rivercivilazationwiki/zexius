@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { useContext, useState, useEffect } from "react";
 import { AppContext } from "./context/AppContext";
 import { DataTable } from "react-native-paper";
+import styles from './styles';
 
 export default function CheckAppD() {
   const { name } = useContext(AppContext);
@@ -24,8 +25,8 @@ export default function CheckAppD() {
   }, []);
 
   return (
-    <View>
-      <Text style={{ fontSize: 18, fontWeight: "bold", marginBottom: 10 }}>
+    <View style={styles.container}>
+      <Text style={styles.header}>
         List of Appointments
       </Text>
       <DataTable>

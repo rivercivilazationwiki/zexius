@@ -2,6 +2,7 @@ import {Text,View,Button} from "react-native";
 import {useRouter,Link} from "expo-router";
 import {useContext} from "react";
 import {AppContext} from "./context/AppContext";
+import styles from './styles';
 function ButtonLink(props) {
   const router=useRouter();
   return (
@@ -22,8 +23,8 @@ export function BottomTab() {
 export default function IndexP() {
   const {name}=useContext(AppContext);
   return (
-    <View style={{flex:1,flexDirection:"column",justifyContent:"flex-end"}}>
-      <Text style={{fontSize:32}}>Welcome {name}</Text>
+    <View style={[styles.container, {justifyContent:"flex-end"}]}>
+      <Text style={styles.header}>Welcome {name}</Text>
       <BottomTab />
     </View>
   )

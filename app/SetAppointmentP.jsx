@@ -3,12 +3,13 @@ import { Picker } from '@react-native-picker/picker';
 import {useState,useEffect,useContext} from 'react';
 import {AppContext} from "./context/AppContext";
 import {BottomTab} from "./IndexP";
+import styles from './styles';
 let appointment={patient:"",doctor:"",date:null};
 let dateobj={year:0,month:0,day:0}
 function AppField(props) {
   return (
     <View>
-      <TextInput placeholder={props.name} onChangeText={(text)=>{appointment[props.name]=text;}} />
+      <TextInput placeholder={props.name} style={styles.input} onChangeText={(text)=>{appointment[props.name]=text;}} />
     </View>
   );
 };
@@ -54,8 +55,8 @@ export default function SetAppointmentP() {
     }).then((r)=>r.json()).then((response)=>console.log(response));
   };
   return (
-    <SafeAreaView style={{flex:1,flexDirection:"column",justifyContent:"space-between"}}>
-      <Text style={{fontSize:32}}>Make an Appointment</Text>
+    <SafeAreaView style={[styles.container, {justifyContent:"space-between"}]}>
+      <Text style={styles.header}>Make an Appointment</Text>
       <AppField name="doctor" />
       <SetDate />
       <Button style={{margin:20}} title="set appointment" onPress={send} />

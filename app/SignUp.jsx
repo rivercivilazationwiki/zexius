@@ -2,11 +2,12 @@ import { useEffect, useState, createContext } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import { Button, Pressable, Text, TextInput, View, Switch, LogBox } from 'react-native';
 import { useRouter } from 'expo-router';
+import styles from './styles';
 let user={name:"",email:"",password:"",type:"patient"};
 function AuthLine(props) {
   return (
-    <View >
-    <TextInput placeholder={props.name} style={{ height: 56, borderColor: 'gray', borderWidth: 1, width:"90%", padding: 16,alignSelf:"center" }} onChangeText={(text)=>{ user[props.name] = text }}  />
+    <View>
+    <TextInput placeholder={props.name} style={styles.input} onChangeText={(text)=>{ user[props.name] = text }}  />
     </View>
   );
 };
@@ -39,8 +40,8 @@ export default function SignUp() {
                                                    };
     })};
     return (
-            <View style={{flex:1,justifyContent:"center"}}>
-            <Text style={{fontSize:32}}>Register a new Account</Text>
+            <View style={styles.container}>
+            <Text style={styles.header}>Register a new Account</Text>
             <TypeSelector />
             <AuthLine name="name" sec="0" />
             <AuthLine name="email" sec="0" />
