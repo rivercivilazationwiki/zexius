@@ -3,7 +3,7 @@ import {Text,TextInput,View,Button,SafeAreaView} from "react-native";
 import { Picker } from '@react-native-picker/picker';
 import {useState,useEffect,useContext} from 'react';
 import {AppContext} from "../context/AppContext";
-import {BottomTab} from "../IndexP";
+import {BottomTab} from "./IndexP";
 import styles from '../styles';
 let appointment={patient:"",doctor:"",date:null};
 let dateobj={year:0,month:0,day:0}

@@ -35,7 +35,7 @@ export default function SignUp() {
                                                        router.navigate("/CheckAppD");
                                                        break;
                                                      case "patient":
-                                                       router.navigate("/IndexP");
+                                                       router.navigate("/(pTabs)/IndexP");
                                                        break;
                                                    };
     })};

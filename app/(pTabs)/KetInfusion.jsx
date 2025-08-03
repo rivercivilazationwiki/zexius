@@ -1,7 +1,7 @@
 
 import {Text,View,ScrollView,SafeAreaView} from "react-native";
 import styles from "../styles";
-import {BottomTab} from "../IndexP"
+import {BottomTab} from "./IndexP"
 
 export default function KetInfusion() {
   return (

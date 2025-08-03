@@ -20,7 +20,7 @@ export default function LogIn() {
         case "doctor":
           return "/CheckAppD";
         case "patient":
-          return "/IndexP";
+          return "/(pTabs)/IndexP";
         default:
           return "/Index";
     };
