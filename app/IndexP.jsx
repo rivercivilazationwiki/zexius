@@ -15,7 +15,9 @@ export function BottomTab() {
   return (
     <View style={{flex:1,flexDirection:"row"}}>
       <ButtonLink title="Make an Appointment" href="/SetAppointmentP" />
+      <View style={{width:5}} />
       <ButtonLink title="Substance Abuse" href="/SubAbbuse" />
+      <View style={{width:5}} />
       <ButtonLink title="Ketamine Infusion" href="/KetInfusion" />
     </View>
   )

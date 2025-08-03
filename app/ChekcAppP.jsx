@@ -13,7 +13,7 @@ export default function CheckAppD() {
     fetch("https://notable-oddly-falcon.ngrok-free.app/appD", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ doctor: name }),
+      body: JSON.stringify({ name: name }),
     })
       .then((r) => r.json())
       .then((response) => {
@@ -34,13 +34,13 @@ export default function CheckAppD() {
       </Text>
       <DataTable>
         <DataTable.Header>
-          <DataTable.Title>Patient</DataTable.Title>
+          <DataTable.Title>Doctor</DataTable.Title>
           <DataTable.Title>Date</DataTable.Title>
         </DataTable.Header>
 
         {data.map((el, index) => (
           <DataTable.Row key={index}>
-            <DataTable.Cell>{el.patient}</DataTable.Cell>
+            <DataTable.Cell>{el.doctor}</DataTable.Cell>
             <DataTable.Cell>{toDateString(el.date)}</DataTable.Cell>
           </DataTable.Row>
         ))}

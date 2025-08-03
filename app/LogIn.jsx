@@ -16,7 +16,6 @@ export default function LogIn() {
   const {name,setName}=useContext(AppContext);
   const [error,setError]=useState("");
   function getDes() { 
-    alert(user.type);
     switch(user.type) {
         case "doctor":
           return "/CheckAppD";
