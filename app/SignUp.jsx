@@ -32,7 +32,7 @@ export default function SignUp() {
             body:JSON.stringify(user)
         }).then((r)=>r.json()).then((response)=>{console.log(response);  switch(user.type) {
                                                      case "doctor":
-                                                       router.navigate("/CheckAppD");
+                                                       router.navigate("/(dTabs)/IndexD");
                                                        break;
                                                      case "patient":
                                                        router.navigate("/(pTabs)/IndexP");

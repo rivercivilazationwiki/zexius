@@ -18,7 +18,7 @@ export default function LogIn() {
   function getDes() { 
     switch(user.type) {
         case "doctor":
-          return "/CheckAppD";
+          return "/(dTabs)/IndexD";
         case "patient":
           return "/(pTabs)/IndexP";
         default:
