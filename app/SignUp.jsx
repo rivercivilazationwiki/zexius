@@ -1,35 +1,52 @@
+import { useEffect, useState, createContext } from 'react';
 import { Picker } from '@react-native-picker/picker';
-import { useEffect, useState } from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import { Button, Pressable, Text, TextInput, View, Switch, LogBox } from 'react-native';
+import { useRouter } from 'expo-router';
 let user={name:"",email:"",password:"",type:"patient"};
 function AuthLine(props) {
   return (
-    <View>
-    <TextInput onChangeText={(text)=>{ user[props.name] = text }} />
+    <View >
+    <TextInput placeholder={props.name} style={{ height: 56, borderColor: 'gray', borderWidth: 1, width:"90%", padding: 16,alignSelf:"center" }} onChangeText={(text)=>{ user[props.name] = text }}  />
     </View>
   );
 };
-export default function SignUp() {
-  const [v,setV]=useState("patient");
-  useEffect(()=>user.type=v,[v]);
+function TypeSelector() {
+    const [value,setValue]=useState("patient");
+    useEffect(()=>{user.type=value},[value]);
+    return (
+        <View>
+        <Picker selectedValue={value} onValueChange={(value)=>{setValue(value)}}>
+        <Picker.Item value="patient" label="patient" />
+             <Picker.Item value="doctor" label="doctor" />
+        </Picker>
+        </View>
+    );
+}
+export default function SignUp() { 
+    const router=useRouter();
     function send() {
-        fetch("http://192.168.4.59:5000/signUp", {
+        fetch("https://notable-oddly-falcon.ngrok-free.app/signUp", {
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(user)
-        }).then((r)=>r.json()).then(response=>console.log(response));
-    };
+        }).then((r)=>r.json()).then((response)=>{console.log(response);  switch(user.type) {
+                                                     case "doctor":
+                                                       router.navigate("/CheckAppD");
+                                                       break;
+                                                     case "patient":
+                                                       router.navigate("/IndexP");
+                                                       break;
+                                                   };
+    })};
     return (
-        <View>
-            <Text>Register a new Account</Text>
-            <Picker selectedValue={v} onValueChange={(itemValue)=>setV(itemValue)}>
-              <Picker.Item label="patient" value="patient" />
-              <Picker.Item label="doctor" value="doctor" />
-            </Picker>
+            <View style={{flex:1,justifyContent:"center"}}>
+            <Text style={{fontSize:32}}>Register a new Account</Text>
+            <TypeSelector />
             <AuthLine name="name" sec="0" />
             <AuthLine name="email" sec="0" />
             <AuthLine name="password" sec="1" />
             <Button title="register" onPress={send}/>
+ 
         </View>
     );
 };

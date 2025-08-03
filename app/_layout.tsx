@@ -1,5 +1,16 @@
 import { Stack } from "expo-router";
-
+import AppProvider from "./context/AppContext";
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <AppProvider>
+      <Stack>
+        <Stack.Screen name="index"/>
+        <Stack.Screen name="SignUp" />
+        <Stack.Screen name="LogIn" />
+        <Stack.Screen name="SetAppointmentP" />
+        <Stack.Screen name="CheckAppD" />
+        <Stack.Screen name="SubAbbuse" />
+      </Stack>
+    </AppProvider>);
 }
+
