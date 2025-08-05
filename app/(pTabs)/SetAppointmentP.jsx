@@ -12,7 +12,7 @@ let dateobj={year:0,month:0,day:0,hour:0,minute:0,ampm:"AM"}
 function AppField(props) {
   return (
     <View>
-      <TextInput placeholder={props.name} style={styles.input} onChangeText={(text)=>{appointment[props.name]=text;}} />
+      <TextInput placeholder={props.name} onChangeText={(text)=>{appointment[props.name]=text;}} />
     </View>
   );
 };
@@ -36,23 +36,17 @@ function SetDateTime() {
   };
   
   return (
-    <View style={{marginVertical: 10}}>
-      <View style={styles.button}>
-        <Button title="Set Date" onPress={()=>showMode("date")} color="#fff" />
-      </View>
-      <View style={styles.button}>
-        <Button title="Set Time" onPress={()=>showMode("time")} color="#fff" />
-      </View>
+    <View>
+      <Button title="Set Date" onPress={()=>showMode("date")} />
+      <Button title="Set Time" onPress={()=>showMode("time")} />
       {show && (
-        <View style={styles.infoBox}>
-          <DateTimePicker
-            testID="dateTimePicker"
-            value={date}
-            mode={mode}
-            is24Hour={false}
-            onChange={onChange}
-          />
-        </View>
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={false}
+          onChange={onChange}
+        />
       )}
     </View>
   );
@@ -72,13 +66,11 @@ export default function SetAppointmentP() {
   };
   
   return (
-    <SafeAreaView style={[styles.container, {justifyContent:"space-between"}]}>
-      <Text style={styles.header}>Make an Appointment</Text>
+    <SafeAreaView>
+      <Text>Make an Appointment</Text>
       <AppField name="doctor" />
       <SetDateTime />
-      <View style={styles.button}>
-        <Button title="Set Appointment" onPress={send} color="#fff" />
-      </View>
+      <Button title="Set Appointment" onPress={send} />
     </SafeAreaView>
   );
 };

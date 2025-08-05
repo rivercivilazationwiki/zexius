@@ -35,8 +35,8 @@ export function BottomTab() {
 export default function IndexD() {
   const {name}=useContext(AppContext);
   return (
-    <View style={[styles.container, {justifyContent:"flex-end"}]}>
-      <Text style={styles.header}>Welcome Dr. {name}</Text>
+    <View>
+      <Text>Welcome Dr. {name}</Text>
       <BottomTab />
     </View>
   )

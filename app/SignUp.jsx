@@ -7,7 +7,7 @@ let user={name:"",email:"",password:"",type:"patient"};
 function AuthLine(props) {
   return (
     <View>
-    <TextInput placeholder={props.name} style={styles.input} onChangeText={(text)=>{ user[props.name] = text }}  />
+    <TextInput placeholder={props.name} onChangeText={(text)=>{ user[props.name] = text }}  />
     </View>
   );
 };
@@ -40,8 +40,8 @@ export default function SignUp() {
                                                    };
     })};
     return (
-            <View style={styles.container}>
-            <Text style={styles.header}>Register a new Account</Text>
+            <View>
+            <Text>Register a new Account</Text>
             <TypeSelector />
             <AuthLine name="name" sec="0" />
             <AuthLine name="email" sec="0" />
