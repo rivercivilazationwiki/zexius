@@ -6,7 +6,7 @@ let user={name:"",email:"",password:"",type:""};
 function AuthLine(props) {
   return (
     <View>
-    <TextInput placeholder={props.name} style={styles.input} onChangeText={(text)=>{ user[props.name] = text }}  />
+    <TextInput placeholder={props.name} onChangeText={(text)=>{ user[props.name] = text }}  />
     </View>
   );
 };
@@ -42,12 +42,12 @@ export default function LogIn() {
                                             });
   };
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Log In</Text>
+    <View>
+      <Text>Log In</Text>
       <AuthLine name="name" sec="0" />
       <AuthLine name="password" sec="1" />
       <Button title="Log In" onPress={send}/>
-      <Text style={styles.errorText}>{error}</Text>
+      <Text>{error}</Text>
     </View>
   );
 };

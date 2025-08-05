@@ -3,7 +3,6 @@ import { Text, View } from "react-native";
 import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import { DataTable } from "react-native-paper";
-import styles from '../styles';
 
 export default function CheckAppD() {
   const { name } = useContext(AppContext);
@@ -29,8 +28,8 @@ export default function CheckAppD() {
     return date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
   };
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>
+    <View>
+      <Text>
         List of Appointments
       </Text>
       <DataTable>
