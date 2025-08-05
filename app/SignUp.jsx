@@ -2,7 +2,6 @@ import { useEffect, useState, createContext } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import { Button, Pressable, Text, TextInput, View, Switch, LogBox } from 'react-native';
 import { useRouter } from 'expo-router';
-import styles from './styles';
 let user={name:"",email:"",password:"",type:"patient"};
 function AuthLine(props) {
   return (

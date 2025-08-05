@@ -3,7 +3,6 @@ import {Text,View,Button} from "react-native";
 import {useRouter,Link} from "expo-router";
 import {useContext} from "react";
 import {AppContext} from "../context/AppContext";
-import styles from '../styles';
 
 function ButtonLink(props) {
   const router=useRouter();

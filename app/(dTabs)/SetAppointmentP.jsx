@@ -1,10 +1,9 @@
 
 import {Text,TextInput,View,Button,SafeAreaView,Platform} from "react-native";
 import { Picker } from '@react-native-picker/picker';
-import {DateTimePicker} from "@react-native-community/datetimepicker";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import {useState,useEffect,useContext} from 'react';
 import {AppContext} from "../context/AppContext";
-import styles from '../styles';
 
 let appointment={patient:"",doctor:"",date:null,};
 let dateobj={year:0,month:0,day:0,hour:0,minute:0,ampm:"AM"}

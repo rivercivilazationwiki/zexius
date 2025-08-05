@@ -2,7 +2,6 @@ import  {useRouter}  from "expo-router";
 import {View,Text,TextInput,Button} from "react-native"
 import {useContext,useState} from "react";
 import {AppContext} from "./context/AppContext";
-import styles from './styles';
 let user={name:"",email:"",password:"",type:""};
 function AuthLine(props) {
   return (
