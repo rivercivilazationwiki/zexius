@@ -36,17 +36,23 @@ function SetDateTime() {
   };
   
   return (
-    <View>
-      <Button title="set date" onPress={()=>showMode("date")} />
-      <Button title="set time" onPress={()=>showMode("time")} />
+    <View style={{marginVertical: 10}}>
+      <View style={styles.button}>
+        <Button title="Set Date" onPress={()=>showMode("date")} color="#fff" />
+      </View>
+      <View style={styles.button}>
+        <Button title="Set Time" onPress={()=>showMode("time")} color="#fff" />
+      </View>
       {show && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
-          is24Hour={false}
-          onChange={onChange}
-        />
+        <View style={styles.infoBox}>
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            mode={mode}
+            is24Hour={false}
+            onChange={onChange}
+          />
+        </View>
       )}
     </View>
   );
@@ -70,7 +76,9 @@ export default function SetAppointmentP() {
       <Text style={styles.header}>Make an Appointment</Text>
       <AppField name="doctor" />
       <SetDateTime />
-      <Button style={{margin:20}} title="set appointment" onPress={send} />
+      <View style={styles.button}>
+        <Button title="Set Appointment" onPress={send} color="#fff" />
+      </View>
     </SafeAreaView>
   );
 };
