@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "zexius",
-    "slug": "zexius",
+    "slug": "samaria",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.christopherlouissaint.samaria"
     },
     "web": {
       "bundler": "metro",
@@ -41,7 +42,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "9242f1f9-f172-4e9f-ab10-3996ff174848"
+        "projectId": "74bc0def-384e-45a9-b3ff-1c3bb1109cbd"
       }
     },
     "owner": "christopherlouissaint"
